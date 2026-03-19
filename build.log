@@ -1,0 +1,28 @@
+Ôľ▓ Next.js 16.2.0 (Turbopack)
+
+  Creating an optimized production build ...
+Ôťô Compiled successfully in 2.7s
+  Running TypeScript ...
+Failed to type check.
+
+./src/app/page.tsx:106:11
+Type error: Type '{ hidden: { opacity: number; y: number; }; visible: { opacity: number; y: number; transition: { duration: number; ease: string; }; }; }' is not assignable to type 'Variants'.
+  Property 'visible' is incompatible with index signature.
+    Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'Variant'.
+      Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'TargetAndTransition'.
+        Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: ResolvedValues$1 | undefined; }'.
+          Types of property 'transition' are incompatible.
+            Type '{ duration: number; ease: string; }' is not assignable to type 'Transition<any> | undefined'.
+              Type '{ duration: number; ease: string; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+                Type '{ duration: number; ease: string; }' is not assignable to type 'ValueAnimationTransition<any>'.
+                  Types of property 'ease' are incompatible.
+                    Type 'string' is not assignable to type 'Easing | Easing[] | undefined'.
+
+  104 |           whileInView="visible"
+  105 |           viewport={{ once: true, margin: "-100px" }}
+> 106 |           variants={fadeIn}
+      |           ^
+  107 |           className="text-center mb-16 lg:mb-24"
+  108 |         >
+  109 |           <h2 className="text-4xl md:text-5xl font-serif text-[#0A192F] mb-6">Na┼íe usluge...
+Next.js build worker exited with code: 1 and signal: null
