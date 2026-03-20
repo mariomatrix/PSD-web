@@ -1,25 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --c-marine: #0A192F;
-  --c-marine-light: #112240;
-  --c-gold: #C5A880;
-  --c-gold-light: #D4B991;
+  /* Logo Colors: Blue & Aggressive Green */
+  --c-marine: #004F9E; /* Primary Blue from Logo (Placeholder close match) */
+  --c-marine-light: #0063C6; 
+  --c-gold: #00B140; /* Aggressive Green from Logo (Replacing gold as accent) */
+  --c-gold-light: #00D34D;
+  
   --c-paper: #FAFAFA;
-  --c-paper-warm: #F5F0EB;
-  --c-text: #1E293B;
-  --c-text-muted: #64748B;
+  --c-paper-warm: #F1F5F9; /* Cooler grey base instead of warm */
+  --c-text: #0F172A; /* Deeper slate for text */
+  --c-text-muted: #475569;
 }
 
 .dark {
+  /* Dark mode relies on deep blue/slate backgrounds to make the green pop, avoiding contrast issues */
   --c-marine: #E2E8F0;
   --c-marine-light: #F8FAFC;
-  --c-paper: #0F172A;
-  --c-paper-warm: #1E293B;
-  --c-text: #F1F5F9;
+  
+  --c-paper: #0B1120; /* Very deep blue-slate for dark mode */
+  --c-paper-warm: #172554; /* Slate 950/900 mix */
+  
+  --c-text: #F8FAFC;
   --c-text-muted: #94A3B8;
-  --c-gold: #D4B991;
-  --c-gold-light: #E5D5AF;
+  
+  --c-gold: #00D34D; /* Brighter green for better dark contrast */
+  --c-gold-light: #22E56B;
 }
 
 @theme {

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import '../globals.css'
 import { getDictionary, hasLocale } from './dictionaries'
@@ -10,11 +10,6 @@ import Footer from '@/components/layout/Footer'
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
-})
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-serif',
 })
 
 export async function generateStaticParams() {
@@ -49,7 +44,7 @@ export default async function LocaleLayout({
   const dict = await getDictionary(lang as Locale)
 
   return (
-    <html lang={lang} className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
+    <html lang={lang} className={`${inter.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased bg-paper text-text transition-colors duration-300">
         <ThemeProvider>
           <Navbar lang={lang as Locale} dict={dict} />

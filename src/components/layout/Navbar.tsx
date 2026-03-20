@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 import LanguageSwitcher from './LanguageSwitcher'
 import ThemeToggle from '@/components/ThemeToggle'
 import type { Locale } from '@/app/[lang]/dictionaries'
@@ -44,9 +45,16 @@ export default function Navbar({ lang, dict }: NavbarProps) {
           {/* Logo */}
           <Link
             href={localizedHref('/', lang)}
-            className="text-white font-serif text-2xl font-bold tracking-tight hover:opacity-80 transition-opacity"
+            className="flex items-center hover:opacity-80 transition-opacity"
           >
-            PŠD Špinut
+            <Image 
+              src="/logo.png" 
+              alt="PŠD Špinut Logo" 
+              width={80} 
+              height={80} 
+              className="w-auto h-12 lg:h-14 drop-shadow-md" 
+              priority 
+            />
           </Link>
 
           {/* Desktop Nav */}

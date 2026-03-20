@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Anchor, Phone, Mail, Clock, MapPin } from 'lucide-react'
+import Image from 'next/image'
+import { Phone, Mail, Clock, MapPin } from 'lucide-react'
 import type { Locale } from '@/app/[lang]/dictionaries'
 import { navLinks, contact, clubs, localizedHref } from '@/lib/constants'
 
@@ -21,9 +22,14 @@ export default function Footer({ lang, dict }: FooterProps) {
 
           {/* Column 1: Logo + Description */}
           <div className="lg:col-span-1">
-            <Link href={localizedHref('/', lang)} className="flex items-center gap-2 mb-6">
-              <Anchor className="w-6 h-6 text-gold" />
-              <span className="text-white font-serif text-xl font-bold">PŠD Špinut</span>
+            <Link href={localizedHref('/', lang)} className="inline-block mb-6 hover:opacity-80 transition-opacity">
+              <Image 
+                src="/logo.png" 
+                alt="PŠD Špinut Logo" 
+                width={120} 
+                height={120} 
+                className="w-auto h-20 drop-shadow-lg" 
+              />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed font-light">
               {dict.footer.description}
