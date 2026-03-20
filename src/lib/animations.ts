@@ -8,7 +8,7 @@ export const fadeInUp: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1.2, ease: smoothEase as unknown as number[] },
+    transition: { duration: 1.2, ease: smoothEase as any },
   },
 }
 
@@ -16,7 +16,7 @@ export const fadeIn: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 0.8, ease: smoothEase as unknown as number[] },
+    transition: { duration: 0.8, ease: smoothEase as any },
   },
 }
 
@@ -33,7 +33,7 @@ export const slideInLeft: Variants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 1.2, ease: smoothEase as unknown as number[] },
+    transition: { duration: 1.2, ease: smoothEase as any },
   },
 }
 
@@ -42,18 +42,18 @@ export const slideInRight: Variants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 1.2, ease: smoothEase as unknown as number[] },
+    transition: { duration: 1.2, ease: smoothEase as any },
   },
 }
 
 // Hover variants for buttons and cards
 export const buttonHover = {
   scale: 1.05,
-  transition: { duration: 0.4, ease: 'easeOut' },
+  transition: { duration: 0.4, ease: 'easeOut' as any },
 }
 
 export const cardHover = {
   y: -8,
   boxShadow: '0px 20px 40px rgba(0,0,0,0.06)',
-  transition: { duration: 0.4, ease: 'easeOut' },
+  transition: { duration: 0.4, ease: 'easeOut' as any },
 }

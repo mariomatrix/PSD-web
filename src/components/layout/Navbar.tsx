@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import LanguageSwitcher from './LanguageSwitcher'
+import ThemeToggle from '@/components/ThemeToggle'
 import type { Locale } from '@/app/[lang]/dictionaries'
 import { navLinks, externalLinks, localizedHref } from '@/lib/constants'
 
@@ -60,6 +61,7 @@ export default function Navbar({ lang, dict }: NavbarProps) {
               </Link>
             ))}
 
+            <ThemeToggle />
             <LanguageSwitcher currentLocale={lang} />
 
             {/* CTA Button */}
@@ -75,6 +77,7 @@ export default function Navbar({ lang, dict }: NavbarProps) {
 
           {/* Mobile: Lang + Hamburger */}
           <div className="flex lg:hidden items-center gap-4">
+            <ThemeToggle />
             <LanguageSwitcher currentLocale={lang} />
             <button
               onClick={() => setIsOpen(!isOpen)}

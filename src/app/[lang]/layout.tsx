@@ -32,6 +32,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   }
 }
 
+import { ThemeProvider } from '@/components/ThemeProvider'
+import CookieConsent from '@/components/CookieConsent'
+
 export default async function LocaleLayout({
   children,
   params,
@@ -46,11 +49,14 @@ export default async function LocaleLayout({
   const dict = await getDictionary(lang as Locale)
 
   return (
-    <html lang={lang} className={`${inter.variable} ${playfair.variable}`}>
-      <body className="font-sans antialiased bg-paper text-text">
-        <Navbar lang={lang as Locale} dict={dict} />
-        <main>{children}</main>
-        <Footer lang={lang as Locale} dict={dict} />
+    <html lang={lang} className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
+      <body className="font-sans antialiased bg-paper text-text transition-colors duration-300">
+        <ThemeProvider>
+          <Navbar lang={lang as Locale} dict={dict} />
+          <main>{children}</main>
+          <Footer lang={lang as Locale} dict={dict} />
+          <CookieConsent />
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -1,18 +1,39 @@
 @import "tailwindcss";
 
+:root {
+  --c-marine: #0A192F;
+  --c-marine-light: #112240;
+  --c-gold: #C5A880;
+  --c-gold-light: #D4B991;
+  --c-paper: #FAFAFA;
+  --c-paper-warm: #F5F0EB;
+  --c-text: #1E293B;
+  --c-text-muted: #64748B;
+}
+
+.dark {
+  --c-marine: #E2E8F0;
+  --c-marine-light: #F8FAFC;
+  --c-paper: #0F172A;
+  --c-paper-warm: #1E293B;
+  --c-text: #F1F5F9;
+  --c-text-muted: #94A3B8;
+  --c-gold: #D4B991;
+  --c-gold-light: #E5D5AF;
+}
+
 @theme {
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
   
-  /* Design Tokens */
-  --color-marine: #0A192F;
-  --color-marine-light: #112240;
-  --color-gold: #C5A880;
-  --color-gold-light: #D4B991;
-  --color-paper: #FAFAFA;
-  --color-paper-warm: #F5F0EB;
-  --color-text: #1E293B;
-  --color-text-muted: #64748B;
+  --color-marine: var(--c-marine);
+  --color-marine-light: var(--c-marine-light);
+  --color-gold: var(--c-gold);
+  --color-gold-light: var(--c-gold-light);
+  --color-paper: var(--c-paper);
+  --color-paper-warm: var(--c-paper-warm);
+  --color-text: var(--c-text);
+  --color-text-muted: var(--c-text-muted);
   --color-success: #22C55E;
   --color-warning: #EAB308;
   --color-danger: #EF4444;

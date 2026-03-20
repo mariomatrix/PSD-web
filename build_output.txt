@@ -1,0 +1,53 @@
+Ôľ▓ Next.js 16.2.0 (Turbopack)
+
+  Creating an optimized production build ...
+Ôťô Compiled successfully in 2.7s
+  Running TypeScript ...
+  Finished TypeScript in 2.4s ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/25) ...
+  Generating static pages using 15 workers (6/25) 
+  Generating static pages using 15 workers (12/25) 
+  Generating static pages using 15 workers (18/25) 
+Ôťô Generating static pages using 15 workers (25/25) in 955ms
+  Finalizing page optimization ...
+
+Route (app)
+Ôöî ÔŚő /
+Ôöť ÔŚő /_not-found
+Ôöť ÔŚĆ /[lang]
+Ôöé Ôöť /hr
+Ôöé Ôöö /en
+Ôöť ÔŚĆ /[lang]/ekologija
+Ôöé Ôöť /hr/ekologija
+Ôöé Ôöö /en/ekologija
+Ôöť ÔŚĆ /[lang]/galerija
+Ôöé Ôöť /hr/galerija
+Ôöé Ôöö /en/galerija
+Ôöť ÔŚĆ /[lang]/kontakt
+Ôöé Ôöť /hr/kontakt
+Ôöé Ôöö /en/kontakt
+Ôöť ÔŚĆ /[lang]/o-nama
+Ôöé Ôöť /hr/o-nama
+Ôöé Ôöö /en/o-nama
+Ôöť ÔŚĆ /[lang]/pravilnik
+Ôöé Ôöť /hr/pravilnik
+Ôöé Ôöö /en/pravilnik
+Ôöť ÔŚĆ /[lang]/tlocrt
+Ôöé Ôöť /hr/tlocrt
+Ôöé Ôöö /en/tlocrt
+Ôöť ÔŚĆ /[lang]/usluge
+Ôöé Ôöť /hr/usluge
+Ôöé Ôöö /en/usluge
+Ôöť ÔŚĆ /[lang]/vijesti
+Ôöé Ôöť /hr/vijesti
+Ôöé Ôöö /en/vijesti
+Ôöö ÔŚĆ /[lang]/vijesti/[slug]
+  Ôöť /hr/vijesti/koncesija-2024
+  Ôöť /hr/vijesti/pravilnik-2025
+  Ôöö /hr/vijesti/ciscenje-podmorja
+
+
+ÔŚő  (Static)  prerendered as static content
+ÔŚĆ  (SSG)     prerendered as static HTML (uses generateStaticParams)
+

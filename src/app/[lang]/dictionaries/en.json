@@ -84,5 +84,45 @@
     "language": "Language",
     "darkMode": "Dark mode",
     "lightMode": "Light mode"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Tradition and passion for the sea since 1954.",
+    "history": "History",
+    "historyText": "Maritime Sports Club Špinut was founded in 1954. Over the decades, we have grown into one of the most important marinas and sports associations in Split, nurturing the tradition of sailing, fishing, and maritime skills.",
+    "concession": "Concession",
+    "concessionText": "The club holds a concession to manage the marina, ensuring continuous investment in infrastructure, ecology, and the safety of all our members.",
+    "management": "Management",
+    "managementText": "Our society is managed by a body of long-time members who volunteer to improve the port and preserve our Mediterranean way of life.",
+    "clubs": "Associated Clubs",
+    "clubsText": "PŠD Špinut includes sports clubs that achieve notable results in national and international competitions."
+  },
+  "servicesPage": {
+    "title": "Services",
+    "subtitle": "Everything you need for a carefree stay at sea.",
+    "berths": "Berths & Transit",
+    "berthsDesc": "The marina accommodates over 700 berths from categories A to F. All berths are equipped with power (16A/32A) and water. We have reserved special fully serviced spots for transit guests.",
+    "crane": "Crane",
+    "craneDesc": "Our modern 15-ton crane allows for safe vessel lifting and launching. Operating hours are from 08:00 to 14:00 on weekdays.",
+    "dryBerth": "Dry Berth",
+    "dryBerthDesc": "We offer dry berth services for long-term land storage, ideal for the winter months or major maintenance work."
+  },
+  "ecology": {
+    "title": "Ecology & Sea Protection",
+    "subtitle": "Preserving our natural wealth for future generations.",
+    "ecomapTitle": "ECOMAP Project",
+    "ecomapDesc": "PŠD Špinut is a proud participant in the EU ECOMAP project, aimed at improving sea quality and equipping sports marinas with ecological infrastructure.",
+    "posterBtn": "Download ECOMAP Poster",
+    "practicesTitle": "Our Ecological Practices",
+    "practicesList": [
+      "Modern recycling point for all waste types (paper, plastic, glass, hazardous waste).",
+      "Strict prohibition of wastewater discharge within the marina waters.",
+      "Regular underwater cleaning campaigns in cooperation with the Špinut Diving Club.",
+      "Mandatory use of eco-friendly washing agents at the slipway."
+    ]
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Moments from the marina in pictures."
   }
 }

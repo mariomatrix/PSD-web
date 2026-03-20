@@ -35,7 +35,7 @@ export default function HeroSection({ dict, craneAppUrl }: HeroSectionProps) {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.4, ease: smoothEase as unknown as number[] }}
+          transition={{ duration: 1.4, ease: smoothEase as any }}
           className="text-white font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight drop-shadow-lg"
         >
           {dict.hero.title}
@@ -44,7 +44,7 @@ export default function HeroSection({ dict, craneAppUrl }: HeroSectionProps) {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.4, delay: 0.3, ease: smoothEase as unknown as number[] }}
+          transition={{ duration: 1.4, delay: 0.3, ease: smoothEase as any }}
           className="text-white/90 text-xl md:text-3xl font-light mb-12 tracking-wide drop-shadow-md"
         >
           {dict.hero.subtitle}
@@ -60,7 +60,7 @@ export default function HeroSection({ dict, craneAppUrl }: HeroSectionProps) {
           transition={{
             duration: 1.2,
             delay: 0.6,
-            ease: smoothEase as unknown as number[],
+            ease: smoothEase as any,
             scale: { duration: 0.4, ease: 'easeOut' },
           }}
           className="bg-gold hover:bg-gold-light text-white px-10 py-5 rounded-sm uppercase tracking-[0.2em] text-sm font-semibold transition-colors duration-300 shadow-md hover:shadow-xl inline-flex items-center"

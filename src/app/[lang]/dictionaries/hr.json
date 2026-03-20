@@ -84,5 +84,45 @@
     "language": "Jezik",
     "darkMode": "Tamni način",
     "lightMode": "Svijetli način"
+  },
+  "about": {
+    "title": "O nama",
+    "subtitle": "Tradicija i strast prema moru od 1954.",
+    "history": "Povijest",
+    "historyText": "Pomorsko športsko društvo Špinut osnovano je 1954. godine. Kroz desetljeća smo izrasli u jednu od najvažnijih lučica i sportskih udruga u Splitu, njegujući tradiciju jedrenja, ribolova i pomorskih vještina.",
+    "concession": "Koncesija",
+    "concessionText": "Društvo posjeduje koncesiju za upravljanje lučicom, osiguravajući kontinuirano ulaganje u infrastrukturu, ekologiju i sigurnost svih naših članova.",
+    "management": "Upravljanje",
+    "managementText": "Našim društvom upravlja tijelo sastavljeno od dugogodišnjih članova koji volonterski rade na unapređenju lučice i očuvanju našeg mediteranskog načina života.",
+    "clubs": "Udruženi klubovi",
+    "clubsText": "Unutar PŠD Špinut djeluju sportski klubovi koji ostvaruju zapažene rezultate na nacionalnim i međunarodnim natjecanjima."
+  },
+  "servicesPage": {
+    "title": "Usluge",
+    "subtitle": "Sve što vam treba za bezbrižan boravak na moru.",
+    "berths": "Vezovi i Tranzit",
+    "berthsDesc": "U lučici je smješteno preko 700 vezova kategorija od A do F. Svi vezovi opremljeni su strujom (16A/32A) i vodom. Za goste u tranzitu osigurali smo posebna mjesta s potpunom uslugom.",
+    "crane": "Dizalica",
+    "craneDesc": "Naša moderna dizalica kapaciteta 15 tona omogućuje sigurno spuštannje i dizanje plovila. Radno vrijeme dizalice je od 08:00 do 14:00 sati radnim danom.",
+    "dryBerth": "Suhi vez",
+    "dryBerthDesc": "Pružamo usluge suhog veza za dugoročan smještaj plovila na kopnu, idealno za zimske mjesece ili veće servise."
+  },
+  "ecology": {
+    "title": "Ekologija i Zaštita mora",
+    "subtitle": "Očuvanje našeg prirodnog bogatstva za buduće generacije.",
+    "ecomapTitle": "Projekt ECOMAP",
+    "ecomapDesc": "PŠD Špinut je ponosni sudionik EU projekta ECOMAP čiji je cilj poboljšanje kvalitete mora i opremanje sportskih lučica ekološkom infrastrukturom.",
+    "posterBtn": "Preuzmi ECOMAP Plakat",
+    "practicesTitle": "Naše ekološke prakse",
+    "practicesList": [
+      "Moderni eko-otok za razvrstavanje svih vrsta otpada (papir, plastika, staklo, opasni otpad).",
+      "Strogo zabranjeno ispuštanje otpadnih voda unutar akvatorija lučice.",
+      "Redovito čišćenje podmorja u suradnji s Ronilačkim klubom Špinut.",
+      "Korištenje ekološki prihvatljivih sredstava za pranje plovila na navozu."
+    ]
+  },
+  "gallery": {
+    "title": "Galerija",
+    "subtitle": "Trenutci iz lučice u slikama."
   }
 }
