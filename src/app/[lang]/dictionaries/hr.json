@@ -1,0 +1,88 @@
+{
+  "nav": {
+    "home": "Naslovnica",
+    "about": "O nama",
+    "services": "Usluge",
+    "marinaPlan": "Tlocrt",
+    "rules": "Pravilnik",
+    "ecology": "Ekologija",
+    "gallery": "Galerija",
+    "contact": "Kontakt",
+    "news": "Vijesti",
+    "bookCrane": "Rezerviraj"
+  },
+  "hero": {
+    "title": "PŠD Špinut",
+    "subtitle": "Tvoja luka u Splitu.",
+    "cta": "Rezerviraj dizalicu"
+  },
+  "serviceBar": {
+    "weather": "Split: 22°C",
+    "status": "Status marine: Otvoreno",
+    "hours": "Tajništvo: 08:00 - 14:00"
+  },
+  "services": {
+    "heading": "Naše usluge",
+    "berths": {
+      "title": "Vezovi i Tranzit",
+      "description": "Siguran i zaštićen vez za vaše plovilo u srcu Dalmacije, uz kompletnu modernu infrastrukturu."
+    },
+    "crane": {
+      "title": "Dizalica i Suhi vez",
+      "description": "Profesionalne usluge dizanja i spuštanja plovila, te siguran prostor za suhi vez.",
+      "cta": "Rezerviraj termin"
+    },
+    "sports": {
+      "title": "Sportske sekcije",
+      "description": "Bogat program sportskog jedrenja i ribolova koji aktivno potiče razvoj mladih i entuzijasta."
+    }
+  },
+  "marinaPlan": {
+    "heading": "Istražite našu lučicu.",
+    "description": "Interaktivni plan vezova i infrastrukture. Pronađite točnu lokaciju vašeg veza, dizalice, gatova i ostalih bitnih sadržaja.",
+    "cta": "Pogledaj plan marine",
+    "landscapeHint": "Okrenite telefon za bolji pregled"
+  },
+  "marina": {
+    "molA": { "name": "Mol A" },
+    "molB": { "name": "Mol B" },
+    "molC": { "name": "Mol C" },
+    "breakwater": { "name": "Lukobran" },
+    "crane": { "name": "Dizalica", "cta": "Rezerviraj termin" },
+    "slipway": { "name": "Navoz" },
+    "office": { "name": "Tajništvo" },
+    "parking": { "name": "Parking" },
+    "ecoIsland": { "name": "Eko-otok" },
+    "restaurant": { "name": "Restoran / Kafić" },
+    "dryBerth": { "name": "Suhi vez" },
+    "category": "Kategorija",
+    "berths": "Vezovi",
+    "maxDraft": "Max gaz",
+    "capacity": "Kapacitet",
+    "workingHours": "Radno vrijeme",
+    "viewPrices": "Pogledaj cijene"
+  },
+  "newsTeaser": {
+    "heading": "Obavijesti",
+    "cta": "Sve vijesti"
+  },
+  "footer": {
+    "description": "Pomorsko športsko društvo Špinut upravlja sportskom lučicom u Splitu od 1954. godine.",
+    "quickLinks": "Brze veze",
+    "clubs": "Udruženi klubovi",
+    "fishingClub": "KŠR Špinut",
+    "sailingClub": "JK Špinut",
+    "divingClub": "RK Špinut",
+    "contactTitle": "Kontakt",
+    "address": "Lučica 7, Split",
+    "workingHours": "Pon – Pet: 08:00 - 14:00",
+    "copyright": "© {year} PŠD Špinut. Sva prava pridržana.",
+    "privacy": "Politika privatnosti"
+  },
+  "common": {
+    "learnMore": "Saznaj više",
+    "language": "Jezik",
+    "darkMode": "Tamni način",
+    "lightMode": "Svijetli način"
+  }
+}

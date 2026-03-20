@@ -1,0 +1,88 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "marinaPlan": "Marina Map",
+    "rules": "Rules",
+    "ecology": "Ecology",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "news": "News",
+    "bookCrane": "Book Crane"
+  },
+  "hero": {
+    "title": "PŠD Špinut",
+    "subtitle": "Your harbour in Split.",
+    "cta": "Book the crane"
+  },
+  "serviceBar": {
+    "weather": "Split: 22°C",
+    "status": "Marina status: Open",
+    "hours": "Office: 08:00 - 14:00"
+  },
+  "services": {
+    "heading": "Our Services",
+    "berths": {
+      "title": "Berths & Transit",
+      "description": "Safe and secure mooring for your vessel in the heart of Dalmatia, with complete modern infrastructure."
+    },
+    "crane": {
+      "title": "Crane & Dry Berth",
+      "description": "Professional vessel lifting and launching services, along with secure dry storage facilities.",
+      "cta": "Book a slot"
+    },
+    "sports": {
+      "title": "Sports Sections",
+      "description": "Rich programs in competitive sailing and fishing, actively fostering youth development and enthusiasts."
+    }
+  },
+  "marinaPlan": {
+    "heading": "Explore our marina.",
+    "description": "Interactive berth plan and infrastructure map. Find the exact location of your berth, crane, piers and other key facilities.",
+    "cta": "View marina plan",
+    "landscapeHint": "Rotate your phone for a better view"
+  },
+  "marina": {
+    "molA": { "name": "Pier A" },
+    "molB": { "name": "Pier B" },
+    "molC": { "name": "Pier C" },
+    "breakwater": { "name": "Breakwater" },
+    "crane": { "name": "Crane", "cta": "Book a slot" },
+    "slipway": { "name": "Slipway" },
+    "office": { "name": "Office" },
+    "parking": { "name": "Parking" },
+    "ecoIsland": { "name": "Recycling Point" },
+    "restaurant": { "name": "Restaurant / Café" },
+    "dryBerth": { "name": "Dry Berth" },
+    "category": "Category",
+    "berths": "Berths",
+    "maxDraft": "Max draft",
+    "capacity": "Capacity",
+    "workingHours": "Working hours",
+    "viewPrices": "View prices"
+  },
+  "newsTeaser": {
+    "heading": "Announcements",
+    "cta": "All news"
+  },
+  "footer": {
+    "description": "Maritime Sports Club Špinut has been managing the sports harbour in Split since 1954.",
+    "quickLinks": "Quick Links",
+    "clubs": "Associated Clubs",
+    "fishingClub": "Fishing Club Špinut",
+    "sailingClub": "Sailing Club Špinut",
+    "divingClub": "Diving Club Špinut",
+    "contactTitle": "Contact",
+    "address": "Lučica 7, Split",
+    "workingHours": "Mon – Fri: 08:00 - 14:00",
+    "copyright": "© {year} PŠD Špinut. All rights reserved.",
+    "privacy": "Privacy Policy"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "language": "Language",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode"
+  }
+}

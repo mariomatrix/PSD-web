@@ -4,19 +4,32 @@
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
   
+  /* Design Tokens */
   --color-marine: #0A192F;
+  --color-marine-light: #112240;
   --color-gold: #C5A880;
+  --color-gold-light: #D4B991;
   --color-paper: #FAFAFA;
+  --color-paper-warm: #F5F0EB;
+  --color-text: #1E293B;
+  --color-text-muted: #64748B;
+  --color-success: #22C55E;
+  --color-warning: #EAB308;
+  --color-danger: #EF4444;
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+/* Selection color */
+::selection {
+  background-color: var(--color-gold);
+  color: white;
+}
+
+/* Base styles */
 @layer base {
   *,
   ::after,
@@ -24,5 +37,10 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-text);
   }
 }
