@@ -1,33 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  /* Option C: Organic Marina (Apple Green, Teal, Navy, Lime) */
-  --c-marine: #27667B; /* Teal Blue - Main hierarchy */
-  --c-marine-light: #A0C878; /* Apple Green - Secondary */
+  /* Option D: Ocean Blue (Navy to Sky) */
+  --c-marine: #03045e; /* Dark Navy - Core headings */
+  --c-marine-light: #0077b6; /* Sea Blue - Secondary */
   
-  --c-gold: #A0C878; /* Apple Green as primary CTA accent */
-  --c-gold-light: #DDEB9D; /* Light Lime for soft highlights */
+  --c-gold: #0077b6; /* Sea Blue as primary accent/CTA */
+  --c-gold-light: #00b4d8; /* Sky Blue for hovers */
   
-  --c-paper: #FFFFFF; /* Pure white for 60% dominance */
-  --c-paper-warm: #DDEB9D; /* Light Lime for subtle sections */
+  --c-paper: #FFFFFF;
+  --c-paper-warm: #caf0f8; /* Very Light Blue for soft backgrounds */
   
-  --c-text: #143D60; /* Deep Navy for maximum legibility */
-  --c-text-muted: #27667B;
+  --c-text: #03045e; /* Dark Navy for text */
+  --c-text-muted: #0077b6;
 }
 
 .dark {
-  /* Dark mode: Sophisticated Navy base */
-  --c-marine: #A0C878; /* Apple Green */
-  --c-marine-light: #DDEB9D;
+  /* Dark mode: Deep Navy background */
+  --c-marine: #90e0ef; /* Light Blue */
+  --c-marine-light: #caf0f8;
   
-  --c-paper: #143D60; /* Deep Navy background */
-  --c-paper-warm: #27667B; /* Teal Blue cards/sections */
+  --c-paper: #03045e; /* Dark Navy base */
+  --c-paper-warm: #023e8a; /* Slightly lighter navy for cards */
   
-  --c-text: #FFFFFF;
-  --c-text-muted: #DDEB9D;
+  --c-text: #caf0f8;
+  --c-text-muted: #90e0ef;
   
-  --c-gold: #A0C878; 
-  --c-gold-light: #DDEB9D;
+  --c-gold: #00b4d8; 
+  --c-gold-light: #90e0ef;
 }
 
 @theme {

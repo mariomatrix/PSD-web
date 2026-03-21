@@ -56,24 +56,19 @@ export default function Navbar({ lang, dict }: NavbarProps) {
           <nav className="max-w-6xl mx-auto pointer-events-auto">
             <div className="bg-marine/80 dark:bg-marine/60 backdrop-blur-xl border border-white/10 dark:border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.12)] rounded-[2rem] lg:rounded-full px-4 lg:px-8 py-2 lg:py-3 flex items-center justify-between">
               
-              {/* Logo Section */}
+              {/* Branding Section */}
               <div className="flex items-center gap-4 lg:gap-8">
                 <Link
                   href={localizedHref('/', lang)}
-                  className="flex items-center hover:opacity-80 transition-opacity shrink-0"
+                  className="flex flex-col hover:opacity-80 transition-opacity shrink-0 text-left"
                 >
-                  <Image 
-                    src="/logo.png" 
-                    alt="PŠD Špinut Logo" 
-                    width={50} 
-                    height={50} 
-                    className="w-10 h-10 lg:w-12 lg:h-12 drop-shadow-md" 
-                    priority 
-                  />
-                  <div className="ml-3 hidden sm:block text-left">
-                    <span className="text-white font-bold tracking-tight text-lg leading-tight block">PŠD Špinut</span>
-                    <span className="text-gold-light text-[10px] uppercase tracking-[0.2em] font-bold block">Lučica Split</span>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-white font-black tracking-tighter text-2xl lg:text-3xl">PŠD</span>
+                    <span className="text-white/40 font-light text-xs uppercase tracking-[0.3em] hidden sm:block">Špinut</span>
                   </div>
+                  <span className="text-gold-light text-[9px] uppercase tracking-[0.1em] font-bold block -mt-1 opacity-80">
+                    Pomorsko športsko društvo Špinut
+                  </span>
                 </Link>
 
                 {/* Desktop Nav Links */}

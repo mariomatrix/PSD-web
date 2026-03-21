@@ -20,16 +20,15 @@ export default function Footer({ lang, dict }: FooterProps) {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
 
-          {/* Column 1: Logo + Description */}
+          {/* Branding Section */}
           <div className="lg:col-span-1">
             <Link href={localizedHref('/', lang)} className="inline-block mb-6 hover:opacity-80 transition-opacity">
-              <Image 
-                src="/logo.png" 
-                alt="PŠD Špinut Logo" 
-                width={120} 
-                height={120} 
-                className="w-auto h-20 drop-shadow-lg" 
-              />
+              <div className="flex flex-col text-left">
+                <span className="text-white font-black tracking-tighter text-3xl">PŠD</span>
+                <span className="text-gold-light text-[10px] uppercase tracking-[0.1em] font-bold block opacity-80 mt-1">
+                  Pomorsko športsko društvo Špinut
+                </span>
+              </div>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed font-light">
               {dict.footer.description}
