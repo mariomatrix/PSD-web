@@ -23,12 +23,12 @@ export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProp
   return (
     <Link
       href={getLocalizedPath(otherLocale)}
-      className="flex items-center gap-1.5 text-sm font-medium tracking-wide transition-colors duration-300 hover:text-gold"
+      className="flex items-center gap-1.5 text-[13px] font-bold tracking-wide transition-colors duration-300 text-white/70 hover:text-white"
       aria-label={`Switch to ${otherLocale === 'en' ? 'English' : 'Hrvatski'}`}
     >
-      <span className={currentLocale === 'hr' ? 'font-bold' : 'opacity-50'}>HR</span>
+      <span className={currentLocale === 'hr' ? 'text-white' : 'opacity-50'}>HR</span>
       <span className="opacity-30">|</span>
-      <span className={currentLocale === 'en' ? 'font-bold' : 'opacity-50'}>EN</span>
+      <span className={currentLocale === 'en' ? 'text-white' : 'opacity-50'}>EN</span>
     </Link>
   )
 }
