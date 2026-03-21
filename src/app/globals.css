@@ -1,31 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  /* Logo Colors: Blue & Aggressive Green */
-  --c-marine: #004F9E; /* Primary Blue from Logo (Placeholder close match) */
-  --c-marine-light: #0063C6; 
-  --c-gold: #00B140; /* Aggressive Green from Logo (Replacing gold as accent) */
-  --c-gold-light: #00D34D;
+  /* Option B Palette: Elegant Marina (Teal, Navy, Sand) */
+  --c-marine: #001219; /* Deep Navy/Teal base */
+  --c-marine-light: #0A9396; /* Vibrant Teal */
+  
+  --c-gold: #005F73; /* Rich Teal as primary CTA accent for A11y with white text */
+  --c-gold-light: #0A9396; /* Vibrant Teal for hovers */
   
   --c-paper: #FAFAFA;
-  --c-paper-warm: #F1F5F9; /* Cooler grey base instead of warm */
-  --c-text: #0F172A; /* Deeper slate for text */
-  --c-text-muted: #475569;
+  --c-paper-warm: #E9D8A6; /* Sand/Champagne for warm areas */
+  
+  --c-text: #001219;
+  --c-text-muted: #005F73;
 }
 
 .dark {
-  /* Dark mode relies on deep blue/slate backgrounds to make the green pop, avoiding contrast issues */
-  --c-marine: #E2E8F0;
-  --c-marine-light: #F8FAFC;
+  /* Dark mode tailored for the Option B palette */
+  --c-marine: #94D2BD; /* Seafoam for headers in dark mode */
+  --c-marine-light: #E9D8A6; /* Sand */
   
-  --c-paper: #0B1120; /* Very deep blue-slate for dark mode */
-  --c-paper-warm: #172554; /* Slate 950/900 mix */
+  --c-paper: #001219; /* Deep navy background */
+  --c-paper-warm: #005F73; /* Rich teal card backgrounds */
   
-  --c-text: #F8FAFC;
-  --c-text-muted: #94A3B8;
+  --c-text: #FAFAFA;
+  --c-text-muted: #94D2BD;
   
-  --c-gold: #00D34D; /* Brighter green for better dark contrast */
-  --c-gold-light: #22E56B;
+  --c-gold: #0A9396; 
+  --c-gold-light: #94D2BD;
 }
 
 @theme {

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import '../globals.css'
 import { getDictionary, hasLocale } from './dictionaries'
@@ -7,7 +7,7 @@ import type { Locale } from './dictionaries'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-sans',
 })
@@ -44,7 +44,7 @@ export default async function LocaleLayout({
   const dict = await getDictionary(lang as Locale)
 
   return (
-    <html lang={lang} className={`${inter.variable}`} suppressHydrationWarning>
+    <html lang={lang} className={`${montserrat.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased bg-paper text-text transition-colors duration-300">
         <ThemeProvider>
           <Navbar lang={lang as Locale} dict={dict} />
