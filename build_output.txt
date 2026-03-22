@@ -1,15 +1,18 @@
 Ôľ▓ Next.js 16.2.0 (Turbopack)
+- Experiments (use with caution):
+  ┬Ě serverActions
 
+ÔÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
   Creating an optimized production build ...
-Ôťô Compiled successfully in 3.1s
+Ôťô Compiled successfully in 2.7s
   Running TypeScript ...
-  Finished TypeScript in 3.4s ...
+  Finished TypeScript in 2.9s ...
   Collecting page data using 15 workers ...
   Generating static pages using 15 workers (0/25) ...
   Generating static pages using 15 workers (6/25) 
   Generating static pages using 15 workers (12/25) 
   Generating static pages using 15 workers (18/25) 
-Ôťô Generating static pages using 15 workers (25/25) in 1040ms
+Ôťô Generating static pages using 15 workers (25/25) in 996ms
   Finalizing page optimization ...
 
 Route (app)
@@ -47,6 +50,8 @@ Route (app)
   Ôöť /hr/vijesti/pravilnik-2025
   Ôöö /hr/vijesti/ciscenje-podmorja
 
+
+Ăĺ Proxy (Middleware)
 
 ÔŚő  (Static)  prerendered as static content
 ÔŚĆ  (SSG)     prerendered as static HTML (uses generateStaticParams)
