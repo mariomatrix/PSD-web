@@ -21,7 +21,7 @@ export default function HeroSection({ dict, craneAppUrl }: HeroSectionProps) {
       <motion.div
         className="absolute inset-x-0 -top-10 -bottom-10 z-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1575806307185-3e284a1e948c?q=80&w=2500&auto=format&fit=crop")',
+          backgroundImage: 'url("/IMG_5405.jpg")',
           y: heroBgY,
         }}
       />

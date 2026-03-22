@@ -1,33 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  /* Option D: Ocean Blue (Navy to Sky) */
-  --c-marine: #03045e; /* Dark Navy - Core headings */
-  --c-marine-light: #0077b6; /* Sea Blue - Secondary */
+  /* Option E: Deep Blue & Warm Sand (Nautical Professional) */
+  --c-marine: #1E4A7A; /* Deep Blue - Primary */
+  --c-marine-light: #2A8A9F; /* Turquoise - Accent */
   
-  --c-gold: #0077b6; /* Sea Blue as primary accent/CTA */
-  --c-gold-light: #00b4d8; /* Sky Blue for hovers */
+  --c-gold: #2A8A9F; /* Turquoise as core accent */
+  --c-gold-light: #F5F0E8; /* Warm Sand as highlight */
   
   --c-paper: #FFFFFF;
-  --c-paper-warm: #caf0f8; /* Very Light Blue for soft backgrounds */
+  --c-paper-warm: #F5F0E8; /* Warm Sand for secondary elements */
   
-  --c-text: #03045e; /* Dark Navy for text */
-  --c-text-muted: #0077b6;
+  --c-text: #1E4A7A; /* Deep Blue for text */
+  --c-text-muted: #2A8A9F;
+  
+  --c-bg-neutral: #EAEFF2; /* Neutral grey-blue for backgrounds */
 }
 
 .dark {
-  /* Dark mode: Deep Navy background */
-  --c-marine: #90e0ef; /* Light Blue */
-  --c-marine-light: #caf0f8;
+  /* Dark mode: Deep Blue base */
+  --c-marine: #2A8A9F; /* Turquoise */
+  --c-marine-light: #F5F0E8;
   
-  --c-paper: #03045e; /* Dark Navy base */
-  --c-paper-warm: #023e8a; /* Slightly lighter navy for cards */
+  --c-paper: #1E4A7A; /* Deep Blue base */
+  --c-paper-warm: #16365C; /* Slightly darker blue */
   
-  --c-text: #caf0f8;
-  --c-text-muted: #90e0ef;
+  --c-text: #F5F0E8;
+  --c-text-muted: #2A8A9F;
   
-  --c-gold: #00b4d8; 
-  --c-gold-light: #90e0ef;
+  --c-gold: #2A8A9F; 
+  --c-gold-light: #4EA4B5;
 }
 
 @theme {

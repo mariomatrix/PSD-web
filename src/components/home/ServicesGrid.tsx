@@ -39,64 +39,81 @@ export default function ServicesGrid({ dict, craneAppUrl }: ServicesGridProps) {
         variants={staggerContainer}
         className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
       >
-        {/* Berths - Large Bento Box (Spans 2 cols, 2 rows on desktop) */}
+        {/* Berths Box */}
         <motion.div
           variants={fadeInUp}
-          whileHover={{ scale: 0.98 }}
-          className="md:col-span-2 md:row-span-2 bg-marine text-white p-10 lg:p-14 rounded-3xl shadow-lg relative overflow-hidden group flex flex-col justify-between transition-transform duration-300 min-h-[400px]"
+          whileHover={{ y: -8 }}
+          className="relative h-[450px] rounded-3xl overflow-hidden shadow-lg group"
         >
-          {/* Subtle background decoration */}
-          <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-marine-light rounded-full opacity-60 blur-3xl group-hover:scale-110 group-hover:bg-gold/20 transition-all duration-700" />
+          <div 
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
+            style={{ backgroundImage: 'url("/IMG_5409.jpg")' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-marine via-marine/40 to-transparent" />
           
-          <div className="relative z-10 flex flex-col h-full">
-            <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-10 border border-white/20">
-              <Anchor strokeWidth={1.5} className="w-8 h-8 text-white" />
+          <div className="relative h-full p-8 flex flex-col justify-end text-white">
+            <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-4 border border-white/20">
+              <Anchor strokeWidth={1.5} className="w-6 h-6" />
             </div>
-            <div className="mt-auto">
-              <h3 className="text-3xl lg:text-4xl font-bold mb-4">{dict.services.berths.title}</h3>
-              <p className="text-white/80 font-light leading-relaxed text-lg lg:text-xl max-w-xl">
-                {dict.services.berths.description}
-              </p>
-            </div>
+            <h3 className="text-2xl font-bold mb-3">{dict.services.berths.title}</h3>
+            <p className="text-white/80 font-light text-sm leading-relaxed mb-4">
+              {dict.services.berths.description}
+            </p>
           </div>
         </motion.div>
 
-        {/* Crane - Highlighted Action Box */}
+        {/* Crane Box */}
         <motion.div
           variants={fadeInUp}
-          whileHover={{ scale: 0.98, y: -4 }}
-          className="bg-paper-warm border border-marine/5 p-8 lg:p-10 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group relative overflow-hidden"
+          whileHover={{ y: -8 }}
+          className="relative h-[450px] rounded-3xl overflow-hidden shadow-lg group"
         >
-          <div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center mb-6 text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-500">
-            <Ship strokeWidth={1.5} className="w-7 h-7" />
+          <div 
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
+            style={{ backgroundImage: 'url("/IMG_5537.jpg")' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-marine via-marine/40 to-transparent" />
+          
+          <div className="relative h-full p-8 flex flex-col justify-end text-white">
+            <div className="w-12 h-12 rounded-xl bg-gold/80 flex items-center justify-center mb-4">
+              <Ship strokeWidth={1.5} className="w-6 h-6" />
+            </div>
+            <h3 className="text-2xl font-bold mb-3">{dict.services.crane.title}</h3>
+            <p className="text-white/80 font-light text-sm leading-relaxed mb-6">
+              {dict.services.crane.description}
+            </p>
+            <a
+              href={craneAppUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white text-marine px-5 py-2.5 rounded-full uppercase tracking-wider text-[10px] font-bold transition-all hover:bg-gold hover:text-white w-fit shadow-md"
+            >
+              {dict.services.crane.cta} <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
-          <h3 className="text-2xl font-bold text-marine mb-3">{dict.services.crane.title}</h3>
-          <p className="text-text-muted font-light leading-relaxed mb-8 flex-grow">
-            {dict.services.crane.description}
-          </p>
-          <a
-            href={craneAppUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-auto inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-white px-6 py-3.5 rounded-xl uppercase tracking-wider text-xs font-bold transition-all shadow-md group-hover:shadow-lg w-fit"
-          >
-            {dict.services.crane.cta} <ArrowRight className="w-4 h-4" />
-          </a>
         </motion.div>
 
         {/* Sports Box */}
         <motion.div
           variants={fadeInUp}
-          whileHover={{ scale: 0.98, y: -4 }}
-          className="bg-white border border-paper-warm p-8 lg:p-10 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group"
+          whileHover={{ y: -8 }}
+          className="relative h-[450px] rounded-3xl overflow-hidden shadow-lg group"
         >
-          <div className="w-14 h-14 rounded-2xl bg-marine/5 flex items-center justify-center mb-6 text-marine group-hover:bg-marine group-hover:text-white transition-colors duration-500">
-            <Sailboat strokeWidth={1.5} className="w-7 h-7" />
+          <div 
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
+            style={{ backgroundImage: 'url("/IMG_5405.jpg")' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-marine via-marine/40 to-transparent" />
+          
+          <div className="relative h-full p-8 flex flex-col justify-end text-white">
+            <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-4 border border-white/20">
+              <Sailboat strokeWidth={1.5} className="w-6 h-6" />
+            </div>
+            <h3 className="text-2xl font-bold mb-3">{dict.services.sports.title}</h3>
+            <p className="text-white/80 font-light text-sm leading-relaxed mb-4">
+              {dict.services.sports.description}
+            </p>
           </div>
-          <h3 className="text-2xl font-bold text-marine mb-3">{dict.services.sports.title}</h3>
-          <p className="text-text-muted font-light leading-relaxed mb-6 flex-grow">
-            {dict.services.sports.description}
-          </p>
         </motion.div>
       </motion.div>
     </section>
