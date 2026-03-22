@@ -18,7 +18,7 @@
     "landscapeHint": "Pinch to zoom / Drag to move / Tap markers"
   },
   "marina": {
-    "office": { "name": "Secretariat" },
+    "office": { "name": "Harbour Master & Office" },
     "restaurant": { "name": "Restaurant / Cafe" },
     "parking": { "name": "Parking" },
     "ecoIsland": { "name": "Eco-Island" },
@@ -26,6 +26,7 @@
     "molA": { "name": "Pier A" },
     "molB": { "name": "Pier B" },
     "molC": { "name": "Pier C" },
+    "pier4": { "name": "Pier No. 4" },
     "category": "Category",
     "berths": "Berths",
     "maxDraft": "Max draft",

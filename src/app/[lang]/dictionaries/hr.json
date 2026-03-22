@@ -18,7 +18,7 @@
     "landscapeHint": "Prstima zumiraj / Povuci za pomicanje / Dodirni oznake"
   },
   "marina": {
-    "office": { "name": "Tajništvo" },
+    "office": { "name": "Kapetan i Ured" },
     "restaurant": { "name": "Restoran / Kafić" },
     "parking": { "name": "Parking" },
     "ecoIsland": { "name": "Eko-otok" },
@@ -26,6 +26,7 @@
     "molA": { "name": "Mol A" },
     "molB": { "name": "Mol B" },
     "molC": { "name": "Mol C" },
+    "pier4": { "name": "Gat br. 4" },
     "category": "Kategorija",
     "berths": "Vezovi",
     "maxDraft": "Max gaz",

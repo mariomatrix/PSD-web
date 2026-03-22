@@ -70,8 +70,8 @@ export default function SatelliteMap({ zones, dict, lang }: SatelliteMapProps) {
   return (
     <div className="relative w-full h-[600px] lg:h-[800px] bg-marine/5 border border-marine/10 rounded-3xl overflow-hidden shadow-inner">
       <MapContainer 
-        center={[43.5186, 16.4225]} 
-        zoom={17} 
+        center={[43.5153347, 16.4178979]} 
+        zoom={18} 
         style={{ height: '100%', width: '100%' }}
         scrollWheelZoom={true}
         className="z-0"
