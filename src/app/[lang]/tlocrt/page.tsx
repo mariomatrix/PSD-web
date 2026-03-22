@@ -1,9 +1,12 @@
 import { notFound } from 'next/navigation'
+import dynamic from 'next/dynamic'
 import { getDictionary, hasLocale } from '../dictionaries'
 import type { Locale } from '../dictionaries'
 import { marinaZones } from '@/lib/marina-data'
 import AnimatedSection from '@/components/ui/AnimatedSection'
-import InteractiveMap from '@/components/marina-map/InteractiveMap'
+
+import SatelliteMap from '@/components/marina-map/SatelliteMap'
+
 
 export default async function MarinaPlanPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
@@ -24,7 +27,7 @@ export default async function MarinaPlanPage({ params }: { params: Promise<{ lan
       </AnimatedSection>
 
       <AnimatedSection delay={0.2}>
-        <InteractiveMap zones={marinaZones} dict={dict} lang={lang} />
+        <SatelliteMap zones={marinaZones} dict={dict} lang={lang} />
       </AnimatedSection>
       
       <AnimatedSection delay={0.4} className="mt-12 text-center text-sm text-text-muted/60">
