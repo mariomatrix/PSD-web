@@ -53,20 +53,17 @@ export default function MarinaPlanTeaser({ lang, dict }: MarinaPlanTeaserProps) 
             variants={slideInRight}
             className="order-1 lg:order-2 flex justify-center lg:justify-end"
           >
-            <div className="w-full max-w-lg aspect-square bg-paper border border-gray-100 rounded-lg p-8 flex items-center justify-center shadow-inner relative group cursor-pointer transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-gold/30">
-              <svg
-                className="w-full h-full text-marine/10 stroke-current group-hover:text-gold/40 transition-colors duration-700"
-                viewBox="0 0 100 100"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M10 50 C 20 20, 80 20, 90 50 C 90 80, 50 90, 10 70 Z" strokeWidth="2" strokeDasharray="4 4" />
-                <rect x="25" y="40" width="10" height="40" strokeWidth="2" />
-                <rect x="45" y="30" width="10" height="50" strokeWidth="2" />
-                <rect x="65" y="45" width="10" height="35" strokeWidth="2" />
-                <circle cx="50" cy="50" r="3" fill="currentColor" />
-              </svg>
-            </div>
+            <Link 
+              href={localizedHref('/tlocrt', lang)}
+              className="w-full max-w-lg aspect-square bg-paper border border-gray-100 rounded-lg overflow-hidden flex items-center justify-center shadow-inner relative group cursor-pointer transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-gold/30"
+            >
+              <img 
+                src="/mapa_lucica_spinut.svg" 
+                alt="Marina Plan Preview" 
+                className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 grayscale group-hover:grayscale-0"
+              />
+              <div className="absolute inset-0 bg-marine/5 group-hover:bg-transparent transition-colors duration-700" title={dict.marinaPlan.cta} />
+            </Link>
           </motion.div>
 
         </div>

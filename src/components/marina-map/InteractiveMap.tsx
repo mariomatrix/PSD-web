@@ -62,9 +62,9 @@ export default function InteractiveMap({ zones, dict, lang }: MarinaMapProps) {
       >
         <TransformComponent wrapperClass="!w-full !h-full cursor-grab active:cursor-grabbing" contentClass="w-full h-full min-w-full min-h-full flex items-center justify-center">
           <div className="relative inline-block shadow-2xl rounded-lg overflow-hidden border border-marine/5">
-            {/* The actual Map Image */}
+            {/* The actual Map Image (SVG) */}
             <img 
-              src="/mapa_lucica_spinut.png" 
+              src="/mapa_lucica_spinut.svg" 
               alt="Marina Plan" 
               className="max-w-none w-auto h-[500px] lg:h-[700px] block"
               onDragStart={(e) => e.preventDefault()}
