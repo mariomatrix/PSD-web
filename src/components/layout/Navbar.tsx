@@ -119,42 +119,53 @@ export default function Navbar({ lang, dict }: NavbarProps) {
           {/* Mobile Overlay Menu */}
           <AnimatePresence>
             {isOpen && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: -40, rotateX: -10 }}
-                animate={{ opacity: 1, scale: 1, y: 0, rotateX: 0 }}
-                exit={{ opacity: 0, scale: 0.9, y: -40, rotateX: -10 }}
-                transition={{ duration: 0.5, ease: [0.2, 0, 0.2, 1] }}
-                className="absolute top-24 left-4 right-4 vibe-glass vibe-floating rounded-[2rem] p-10 lg:hidden pointer-events-auto border border-white/20 shadow-2xl"
-              >
-                <div className="flex flex-col gap-6 items-center">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.key}
-                      href={localizedHref(link.href, lang)}
-                      onClick={() => setIsOpen(false)}
-                      className="text-white/90 text-xl font-bold tracking-wide hover:text-gold transition-colors"
-                    >
-                      {dict.nav[link.key]}
-                    </Link>
-                  ))}
-                  
-                  <div className="w-full h-px bg-white/10 my-4" />
-                  
-                  <div className="flex items-center gap-6 mb-4">
-                    <ThemeToggle />
-                    <LanguageSwitcher currentLocale={lang} />
-                  </div>
+              <>
+                {/* Backdrop Overlay */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={() => setIsOpen(false)}
+                  className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[1001] lg:hidden"
+                />
 
-                  <a
-                    href={externalLinks.craneApp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bg-gold hover:bg-gold-light text-white px-8 py-4 rounded-full uppercase tracking-widest text-sm font-bold transition-all text-center shadow-lg"
-                  >
-                    {dict.nav.bookCrane}
-                  </a>
-                </div>
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, y: -40, rotateX: -10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0, rotateX: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: -40, rotateX: -10 }}
+                  transition={{ duration: 0.5, ease: [0.2, 0, 0.2, 1] }}
+                  className="absolute top-24 left-4 right-4 vibe-glass vibe-floating rounded-[2rem] p-10 lg:hidden z-[1002] pointer-events-auto border border-white/20 shadow-2xl bg-marine/90 dark:bg-marine/80"
+                >
+                  <div className="flex flex-col gap-6 items-center">
+                    {navLinks.map((link) => (
+                      <Link
+                        key={link.key}
+                        href={localizedHref(link.href, lang)}
+                        onClick={() => setIsOpen(false)}
+                        className="text-white text-xl font-black tracking-[0.1em] hover:text-gold transition-colors uppercase"
+                      >
+                        {dict.nav[link.key]}
+                      </Link>
+                    ))}
+                    
+                    <div className="w-full h-px bg-white/10 my-4" />
+                    
+                    <div className="flex items-center gap-6 mb-4">
+                      <ThemeToggle />
+                      <LanguageSwitcher currentLocale={lang} />
+                    </div>
+
+                    <a
+                      href={externalLinks.craneApp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full bg-gold hover:bg-gold-light text-white px-8 py-5 rounded-full uppercase tracking-widest text-sm font-black transition-all text-center shadow-lg"
+                    >
+                      {dict.nav.bookCrane}
+                    </a>
+                  </div>
+                </motion.div>
+              </>
             )}
           </AnimatePresence>
         </motion.header>
