@@ -11,6 +11,21 @@
     "news": "Vijesti",
     "bookCrane": "Rezerviraj dizalicu"
   },
+  "marinaPlan": {
+    "title": "Plan lučice",
+    "description": "Interaktivni plan vezova i infrastrukture.",
+    "landscapeHint": "Prstima zumiraj / Povuci za pomicanje / Dodirni oznake"
+  },
+  "marina": {
+    "office": { "name": "Tajništvo" },
+    "restaurant": { "name": "Restoran / Kafić" },
+    "parking": { "name": "Parking" },
+    "ecoIsland": { "name": "Eko-otok" },
+    "crane": { "name": "Dizalica", "cta": "Rezerviraj termin" },
+    "molA": { "name": "Mol A" },
+    "molB": { "name": "Mol B" },
+    "molC": { "name": "Mol C" }
+  },
   "hero": {
     "title": "PŠD Špinut",
     "subtitle": "Tvoja luka u Splitu.",
@@ -36,31 +51,6 @@
       "title": "Sportske sekcije",
       "description": "Bogat program sportskog jedrenja i ribolova koji aktivno potiče razvoj mladih i entuzijasta."
     }
-  },
-  "marinaPlan": {
-    "heading": "Istražite našu lučicu.",
-    "description": "Interaktivni plan vezova i infrastrukture. Pronađite točnu lokaciju vašeg veza, dizalice, gatova i ostalih bitnih sadržaja.",
-    "cta": "Pogledaj plan marine",
-    "landscapeHint": "Okrenite telefon za bolji pregled"
-  },
-  "marina": {
-    "molA": { "name": "Mol A" },
-    "molB": { "name": "Mol B" },
-    "molC": { "name": "Mol C" },
-    "breakwater": { "name": "Lukobran" },
-    "crane": { "name": "Dizalica", "cta": "Rezerviraj termin" },
-    "slipway": { "name": "Navoz" },
-    "office": { "name": "Tajništvo" },
-    "parking": { "name": "Parking" },
-    "ecoIsland": { "name": "Eko-otok" },
-    "restaurant": { "name": "Restoran / Kafić" },
-    "dryBerth": { "name": "Suhi vez" },
-    "category": "Kategorija",
-    "berths": "Vezovi",
-    "maxDraft": "Max gaz",
-    "capacity": "Kapacitet",
-    "workingHours": "Radno vrijeme",
-    "viewPrices": "Pogledaj cijene"
   },
   "newsTeaser": {
     "heading": "Obavijesti",

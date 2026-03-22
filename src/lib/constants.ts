@@ -26,7 +26,7 @@ export const contact = {
 export const clubs = [
   { nameKey: 'fishingClub', url: 'https://www.ksr-spinut.hr' },
   { nameKey: 'sailingClub', url: 'http://www.jk-spinut.hr' },
-  { nameKey: 'divingClub', url: 'http://www.rkspinut.blog.hr' },
+  { nameKey: 'divingClub', url: 'https://www.facebook.com/RonilackiKlubSpinut/' },
 ] as const
 
 // External links

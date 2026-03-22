@@ -11,6 +11,21 @@
     "news": "News",
     "bookCrane": "Book Crane"
   },
+  "marinaPlan": {
+    "title": "Marina Map",
+    "description": "Interactive map of berths and infrastructure.",
+    "landscapeHint": "Pinch to zoom / Drag to move / Tap markers"
+  },
+  "marina": {
+    "office": { "name": "Secretariat" },
+    "restaurant": { "name": "Restaurant / Cafe" },
+    "parking": { "name": "Parking" },
+    "ecoIsland": { "name": "Eco-Island" },
+    "crane": { "name": "Crane", "cta": "Book Service" },
+    "molA": { "name": "Pier A" },
+    "molB": { "name": "Pier B" },
+    "molC": { "name": "Pier C" }
+  },
   "hero": {
     "title": "PŠD Špinut",
     "subtitle": "Your harbour in Split.",
@@ -36,31 +51,6 @@
       "title": "Sports Sections",
       "description": "Rich programs in competitive sailing and fishing, actively fostering youth development and enthusiasts."
     }
-  },
-  "marinaPlan": {
-    "heading": "Explore our marina.",
-    "description": "Interactive berth plan and infrastructure map. Find the exact location of your berth, crane, piers and other key facilities.",
-    "cta": "View marina plan",
-    "landscapeHint": "Rotate your phone for a better view"
-  },
-  "marina": {
-    "molA": { "name": "Pier A" },
-    "molB": { "name": "Pier B" },
-    "molC": { "name": "Pier C" },
-    "breakwater": { "name": "Breakwater" },
-    "crane": { "name": "Crane", "cta": "Book a slot" },
-    "slipway": { "name": "Slipway" },
-    "office": { "name": "Office" },
-    "parking": { "name": "Parking" },
-    "ecoIsland": { "name": "Recycling Point" },
-    "restaurant": { "name": "Restaurant / Café" },
-    "dryBerth": { "name": "Dry Berth" },
-    "category": "Category",
-    "berths": "Berths",
-    "maxDraft": "Max draft",
-    "capacity": "Capacity",
-    "workingHours": "Working hours",
-    "viewPrices": "View prices"
   },
   "newsTeaser": {
     "heading": "Announcements",

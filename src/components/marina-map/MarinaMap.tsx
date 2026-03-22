@@ -1,10 +1,11 @@
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState } from 'react'
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Anchor, Maximize2 } from 'lucide-react'
+import { X, Anchor, Maximize2, Coffee, Building2, Car, Trash2, Ship } from 'lucide-react'
 import type { MarinaZoneInfo } from '@/lib/marina-data'
+import Image from 'next/image'
 
 interface MarinaMapProps {
   zones: MarinaZoneInfo[]
@@ -12,130 +13,134 @@ interface MarinaMapProps {
   lang: string
 }
 
+const IconMap: Record<string, any> = {
+  anchor: Anchor,
+  coffee: Coffee,
+  building: Building2,
+  parking: Car,
+  trash: Trash2,
+  crane: Ship,
+}
+
 export default function MarinaMap({ zones, dict, lang }: MarinaMapProps) {
   const [activeZoneId, setActiveZoneId] = useState<string | null>(null)
-  
-  // Close tooltip on esc or outside click is handled implicitly via simple UI for MVP
   const activeZone = zones.find(z => z.id === activeZoneId)
 
   return (
-    <div className="relative w-full h-[600px] lg:h-[800px] bg-paper-warm border border-gray-200 rounded-sm overflow-hidden flex flex-col justify-end">
+    <div className="relative w-full h-[600px] lg:h-[800px] bg-[#f8f9fa] border border-marine/10 rounded-3xl overflow-hidden flex flex-col items-center">
       
-      {/* Mobile Hint */}
-      <div className="absolute top-4 left-0 right-0 z-10 flex justify-center pointer-events-none">
-        <div className="bg-marine/80 backdrop-blur-sm text-white text-xs px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-          <Maximize2 className="w-3 h-3" />
-          {dict.marinaPlan?.landscapeHint || "Pinch to zoom / Tap to details"}
+      {/* Mobile/UI Hint */}
+      <div className="absolute top-6 left-0 right-0 z-10 flex justify-center pointer-events-none">
+        <div className="bg-marine/90 backdrop-blur-md text-white text-[11px] uppercase tracking-widest font-bold px-6 py-2.5 rounded-full shadow-2xl flex items-center gap-3 border border-white/10">
+          <Maximize2 className="w-3.5 h-3.5 text-gold" />
+          {dict.marinaPlan?.landscapeHint || "Pinch to zoom / Drag to move / Tap markers"}
         </div>
       </div>
 
       <TransformWrapper
         initialScale={1}
-        minScale={0.8}
+        minScale={0.5}
         maxScale={4}
         centerOnInit
-        wheel={{ step: 0.1 }}
       >
-        <TransformComponent wrapperClass="w-full h-full cursor-move" contentClass="w-full h-full">
-          {/* SVG Placeholder Base */}
-          <div className="w-full h-full min-w-[800px] min-h-[600px] relative flex items-center justify-center p-12">
-            <svg viewBox="0 0 1000 800" className="w-full h-full drop-shadow-sm" style={{ fill: 'none' }}>
-              {/* Fake coastline context */}
-              <path d="M 0 0 L 1000 0 L 1000 200 L 0 400 Z" fill="#E2E8F0" />
-              <path d="M 0 400 L 1000 200 L 1000 800 L 0 800 Z" fill="#E0F2FE" />
-              
-              {/* Pier A (mol-a) */}
-              <g 
-                onClick={() => setActiveZoneId('mol-a')}
-                className={`cursor-pointer transition-colors duration-300 ${activeZoneId === 'mol-a' ? 'fill-gold/40 stroke-gold' : 'fill-marine/20 stroke-marine/40 hover:fill-gold/20'}`}
-              >
-                <rect x="200" y="300" width="30" height="250" strokeWidth="2" />
-                <text x="215" y="425" fill="#0A192F" fontSize="16" fontWeight="bold" textAnchor="middle" transform="rotate(-90 215 425)">A</text>
-              </g>
+        <TransformComponent wrapperClass="!w-full !h-full cursor-grab active:cursor-grabbing" contentClass="w-full h-full min-w-full min-h-full flex items-center justify-center">
+          <div className="relative inline-block shadow-2xl rounded-lg overflow-hidden border border-marine/5">
+            {/* The actual Map Image */}
+            <img 
+              src="/mapa_lucica_spinut.png" 
+              alt="Marina Plan" 
+              className="max-w-none w-auto h-[500px] lg:h-[700px] block"
+              onDragStart={(e) => e.preventDefault()}
+            />
 
-              {/* Pier B (mol-b) */}
-              <g 
-                onClick={() => setActiveZoneId('mol-b')}
-                className={`cursor-pointer transition-colors duration-300 ${activeZoneId === 'mol-b' ? 'fill-gold/40 stroke-gold' : 'fill-marine/20 stroke-marine/40 hover:fill-gold/20'}`}
-              >
-                <rect x="400" y="280" width="30" height="300" strokeWidth="2" />
-                <text x="415" y="430" fill="#0A192F" fontSize="16" fontWeight="bold" textAnchor="middle" transform="rotate(-90 415 430)">B</text>
-              </g>
+            {/* Interactive Markers Layer */}
+            {zones.map((zone) => {
+              const Icon = IconMap[zone.icon || 'anchor'] || Anchor
+              const isActive = activeZoneId === zone.id
 
-              {/* Crane (crane) */}
-              <g 
-                onClick={() => setActiveZoneId('crane')}
-                className={`cursor-pointer transition-colors duration-300 ${activeZoneId === 'crane' ? 'fill-gold stroke-marine' : 'fill-warning stroke-marine hover:fill-gold'}`}
-              >
-                <circle cx="700" cy="220" r="25" strokeWidth="3" />
-                <text x="700" y="226" fill="#0A192F" fontSize="18" fontWeight="bold" textAnchor="middle">🏗️</text>
-              </g>
-
-              {/* Office (office) */}
-              <g 
-                onClick={() => setActiveZoneId('office')}
-                className={`cursor-pointer transition-colors duration-300 ${activeZoneId === 'office' ? 'fill-marine stroke-white' : 'fill-marine/80 stroke-white hover:fill-marine'}`}
-              >
-                <rect x="100" y="100" width="80" height="60" strokeWidth="2" />
-                <text x="140" y="136" fill="white" fontSize="14" fontWeight="bold" textAnchor="middle">🏢</text>
-              </g>
-            </svg>
+              return (
+                <button
+                  key={zone.id}
+                  onClick={() => setActiveZoneId(zone.id)}
+                  style={{ left: `${zone.x}%`, top: `${zone.y}%` }}
+                  className={`absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-300 group
+                    ${isActive ? 'scale-125 z-20' : 'hover:scale-110'}`}
+                >
+                  <div className={`flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 rounded-full shadow-lg border-2 transition-all
+                    ${isActive 
+                      ? 'bg-gold border-white text-white rotate-0' 
+                      : 'bg-white border-marine/20 text-marine group-hover:border-gold group-hover:bg-paper-warm'}`}
+                  >
+                    <Icon className={`w-5 h-5 lg:w-6 lg:h-6 ${isActive ? 'animate-pulse' : ''}`} />
+                  </div>
+                  
+                  {/* Label (Visible on hover or if active) */}
+                  <div className={`absolute top-full mt-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-marine text-white text-[10px] font-bold uppercase tracking-tighter rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md pointer-events-none
+                    ${isActive ? 'opacity-100 scale-110' : ''}`}
+                  >
+                    {zone.id.replace(/-/g, ' ')}
+                  </div>
+                </button>
+              )
+            })}
           </div>
         </TransformComponent>
       </TransformWrapper>
 
-      {/* Tooltip Layer - absolute bottom-left over the map */}
+      {/* Modern Tooltip/Info Board */}
       <AnimatePresence>
         {activeZone && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            className="absolute bottom-6 left-6 right-6 lg:left-8 lg:right-auto lg:w-80 bg-white shadow-xl border border-gray-100 p-6 rounded-sm z-20 pointer-events-auto"
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            className="absolute bottom-8 left-8 right-8 lg:left-12 lg:right-auto lg:w-96 bg-white/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-marine/10 p-8 rounded-3xl z-30 pointer-events-auto"
           >
             <button 
               onClick={() => setActiveZoneId(null)}
-              className="absolute top-4 right-4 text-text-muted hover:text-marine transition-colors"
+              className="absolute top-6 right-6 p-2 text-marine/40 hover:text-marine hover:bg-marine/5 rounded-full transition-all"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <h3 className="text-xl font-serif text-marine mb-4 border-b border-gray-100 pb-3 flex items-center gap-2">
-              <Anchor className="w-5 h-5 text-gold" />
-              {/* To perfectly resolve nest keys from JSON, ideally we'd pass a flat translation or use a resolver. 
-                  For MVP, we use naive lookup or hardcode if not found. */}
-              {activeZone.nameKey.split('.').reduce((o, i) => o?.[i], dict) || activeZone.nameKey}
-            </h3>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-marine/5 flex items-center justify-center text-gold">
+                {React.createElement(IconMap[activeZone.icon || 'anchor'] || Anchor, { className: "w-6 h-6" })}
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-marine leading-tight">
+                  {/* Localized lookup */}
+                  {activeZone.nameKey.split('.').reduce((o, i) => o?.[i], dict) || activeZone.id}
+                </h3>
+                <span className="text-[10px] uppercase tracking-[0.2em] font-black text-marine/30">
+                  {activeZone.type}
+                </span>
+              </div>
+            </div>
 
-            <div className="space-y-2 text-sm">
+            <div className="grid grid-cols-2 gap-4 text-sm mb-8">
               {activeZone.category && (
-                <div className="flex justify-between">
-                  <span className="text-text-muted">{dict.marina?.category || 'Kategorija'}:</span>
-                  <span className="font-medium text-marine">{activeZone.category}</span>
+                <div className="bg-marine/5 p-4 rounded-2xl">
+                  <span className="text-[10px] uppercase font-bold text-marine/40 block mb-1">Kat</span>
+                  <span className="font-bold text-marine">{activeZone.category}</span>
                 </div>
               )}
               {activeZone.berths && (
-                <div className="flex justify-between">
-                  <span className="text-text-muted">{dict.marina?.berths || 'Vezovi'}:</span>
-                  <span className="font-medium text-marine">{activeZone.berths}</span>
+                <div className="bg-marine/5 p-4 rounded-2xl">
+                  <span className="text-[10px] uppercase font-bold text-marine/40 block mb-1">Vezovi</span>
+                  <span className="font-bold text-marine">{activeZone.berths}</span>
                 </div>
               )}
               {activeZone.maxDraft && (
-                <div className="flex justify-between">
-                  <span className="text-text-muted">{dict.marina?.maxDraft || 'Max gaz'}:</span>
-                  <span className="font-medium text-marine">{activeZone.maxDraft}</span>
-                </div>
-              )}
-              {activeZone.capacity && (
-                <div className="flex justify-between">
-                  <span className="text-text-muted">{dict.marina?.capacity || 'Kapacitet'}:</span>
-                  <span className="font-medium text-marine">{activeZone.capacity}</span>
+                <div className="bg-marine/5 p-4 rounded-2xl">
+                  <span className="text-[10px] uppercase font-bold text-marine/40 block mb-1">Max gaz</span>
+                  <span className="font-bold text-marine">{activeZone.maxDraft}</span>
                 </div>
               )}
               {activeZone.workingHours && (
-                <div className="flex justify-between">
-                  <span className="text-text-muted">{dict.marina?.workingHours || 'Radno vrijeme'}:</span>
-                  <span className="font-medium text-marine">{activeZone.workingHours}</span>
+                <div className="bg-marine/5 p-4 rounded-2xl col-span-2">
+                  <span className="text-[10px] uppercase font-bold text-marine/40 block mb-1">Radno vrijeme</span>
+                  <span className="font-bold text-marine">{activeZone.workingHours}</span>
                 </div>
               )}
             </div>
@@ -145,10 +150,9 @@ export default function MarinaMap({ zones, dict, lang }: MarinaMapProps) {
                 href={activeZone.ctaLink}
                 target={activeZone.external ? "_blank" : undefined}
                 rel={activeZone.external ? "noopener noreferrer" : undefined}
-                className="mt-6 block w-full text-center bg-gold hover:bg-gold-light text-white px-4 py-3 rounded-sm uppercase tracking-widest text-xs font-semibold transition-colors shadow-sm"
+                className="block w-full text-center bg-marine hover:bg-marine-light text-white px-8 py-4 rounded-2xl uppercase tracking-widest text-xs font-bold transition-all shadow-lg hover:shadow-xl active:scale-95"
               >
-                {/* Same naive translation lookup logic */}
-                {activeZone.ctaKey ? activeZone.ctaKey.split('.').reduce((o, i) => o?.[i], dict) : 'Klikni'}
+                {activeZone.ctaKey ? activeZone.ctaKey.split('.').reduce((o, i) => o?.[i], dict) : 'VIŠE INFORMACIJA'}
               </a>
             )}
           </motion.div>
