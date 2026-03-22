@@ -136,6 +136,14 @@ export default function Navbar({ lang, dict }: NavbarProps) {
                   transition={{ duration: 0.5, ease: [0.2, 0, 0.2, 1] }}
                   className="absolute top-24 left-4 right-4 vibe-glass vibe-floating rounded-[2rem] p-10 lg:hidden z-[1002] pointer-events-auto border border-white/20 shadow-2xl bg-marine/90 dark:bg-marine/80"
                 >
+                  {/* Internal Close Button */}
+                  <button 
+                    onClick={() => setIsOpen(false)}
+                    className="absolute top-8 right-8 p-3 text-white/40 hover:text-white hover:bg-white/10 rounded-full transition-all active:scale-90"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+
                   <div className="flex flex-col gap-6 items-center">
                     {navLinks.map((link) => (
                       <Link
