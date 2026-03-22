@@ -12,8 +12,9 @@
     "bookCrane": "Rezerviraj dizalicu"
   },
   "marinaPlan": {
-    "title": "Plan lučice",
+    "heading": "Plan lučice",
     "description": "Interaktivni plan vezova i infrastrukture.",
+    "cta": "Pogledaj plan",
     "landscapeHint": "Prstima zumiraj / Povuci za pomicanje / Dodirni oznake"
   },
   "marina": {
@@ -24,7 +25,13 @@
     "crane": { "name": "Dizalica", "cta": "Rezerviraj termin" },
     "molA": { "name": "Mol A" },
     "molB": { "name": "Mol B" },
-    "molC": { "name": "Mol C" }
+    "molC": { "name": "Mol C" },
+    "category": "Kategorija",
+    "berths": "Vezovi",
+    "maxDraft": "Max gaz",
+    "capacity": "Kapacitet",
+    "workingHours": "Radno vrijeme",
+    "viewPrices": "Pogledaj cijene"
   },
   "hero": {
     "title": "PŠD Špinut",

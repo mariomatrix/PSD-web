@@ -12,8 +12,9 @@
     "bookCrane": "Book Crane"
   },
   "marinaPlan": {
-    "title": "Marina Map",
+    "heading": "Marina Map",
     "description": "Interactive map of berths and infrastructure.",
+    "cta": "View map",
     "landscapeHint": "Pinch to zoom / Drag to move / Tap markers"
   },
   "marina": {
@@ -24,7 +25,13 @@
     "crane": { "name": "Crane", "cta": "Book Service" },
     "molA": { "name": "Pier A" },
     "molB": { "name": "Pier B" },
-    "molC": { "name": "Pier C" }
+    "molC": { "name": "Pier C" },
+    "category": "Category",
+    "berths": "Berths",
+    "maxDraft": "Max draft",
+    "capacity": "Capacity",
+    "workingHours": "Working hours",
+    "viewPrices": "View prices"
   },
   "hero": {
     "title": "PŠD Špinut",

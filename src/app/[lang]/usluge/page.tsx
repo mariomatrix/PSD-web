@@ -56,12 +56,12 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
 
       {/* Berth Categories Table */}
       <AnimatedSection delay={0.3} className="max-w-4xl mx-auto">
-        <h3 className="text-3xl font-serif text-marine mb-8 text-center">{dict.marina.category}</h3>
+        <h3 className="text-3xl font-bold text-marine mb-8 text-center">{dict.marina?.category || 'Kategorije vezova'}</h3>
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="border-b-2 border-marine/10">
-                <th className="py-4 px-6 font-semibold text-marine uppercase tracking-wider text-sm">{dict.marina.category}</th>
+                <th className="py-4 px-6 font-bold text-marine uppercase tracking-wider text-xs">{dict.marina?.category}</th>
                 <th className="py-4 px-6 font-semibold text-marine uppercase tracking-wider text-sm">Max dužina</th>
                 <th className="py-4 px-6 font-semibold text-marine uppercase tracking-wider text-sm">Max širina</th>
                 <th className="py-4 px-6 font-semibold text-marine uppercase tracking-wider text-sm">Napomena</th>

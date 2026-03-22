@@ -4,11 +4,28 @@ import React, { useState } from 'react'
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Anchor, Maximize2, Coffee, Building2, Car, Trash2, Ship } from 'lucide-react'
-import type { MarinaZoneInfo } from '@/lib/marina-data'
-import Image from 'next/image'
+export type ZoneType = 'pier' | 'poi' | 'facility'
+
+export interface MarinaZoneInfo {
+  id: string
+  type: ZoneType
+  nameKey: string
+  x: number
+  y: number
+  category?: string
+  maxLength?: string
+  berths?: number
+  maxDraft?: string
+  icon?: string
+  capacity?: string
+  workingHours?: string
+  ctaKey?: string
+  ctaLink?: string
+  external?: boolean
+}
 
 interface MarinaMapProps {
-  zones: MarinaZoneInfo[]
+  zones: any[]
   dict: any
   lang: string
 }
@@ -22,9 +39,9 @@ const IconMap: Record<string, any> = {
   crane: Ship,
 }
 
-export default function MarinaMap({ zones, dict, lang }: MarinaMapProps) {
+export default function InteractiveMap({ zones, dict, lang }: MarinaMapProps) {
   const [activeZoneId, setActiveZoneId] = useState<string | null>(null)
-  const activeZone = zones.find(z => z.id === activeZoneId)
+  const activeZone = (zones as any[]).find(z => z.id === activeZoneId) as any
 
   return (
     <div className="relative w-full h-[600px] lg:h-[800px] bg-[#f8f9fa] border border-marine/10 rounded-3xl overflow-hidden flex flex-col items-center">
@@ -110,7 +127,7 @@ export default function MarinaMap({ zones, dict, lang }: MarinaMapProps) {
               <div>
                 <h3 className="text-2xl font-bold text-marine leading-tight">
                   {/* Localized lookup */}
-                  {activeZone.nameKey.split('.').reduce((o, i) => o?.[i], dict) || activeZone.id}
+                  {activeZone.nameKey.split('.').reduce((o: any, i: string) => o?.[i], dict) || activeZone.id}
                 </h3>
                 <span className="text-[10px] uppercase tracking-[0.2em] font-black text-marine/30">
                   {activeZone.type}
@@ -119,25 +136,25 @@ export default function MarinaMap({ zones, dict, lang }: MarinaMapProps) {
             </div>
 
             <div className="grid grid-cols-2 gap-4 text-sm mb-8">
-              {activeZone.category && (
+              {activeZone?.category && (
                 <div className="bg-marine/5 p-4 rounded-2xl">
                   <span className="text-[10px] uppercase font-bold text-marine/40 block mb-1">Kat</span>
                   <span className="font-bold text-marine">{activeZone.category}</span>
                 </div>
               )}
-              {activeZone.berths && (
+              {activeZone?.berths && (
                 <div className="bg-marine/5 p-4 rounded-2xl">
                   <span className="text-[10px] uppercase font-bold text-marine/40 block mb-1">Vezovi</span>
                   <span className="font-bold text-marine">{activeZone.berths}</span>
                 </div>
               )}
-              {activeZone.maxDraft && (
+              {activeZone?.maxDraft && (
                 <div className="bg-marine/5 p-4 rounded-2xl">
                   <span className="text-[10px] uppercase font-bold text-marine/40 block mb-1">Max gaz</span>
                   <span className="font-bold text-marine">{activeZone.maxDraft}</span>
                 </div>
               )}
-              {activeZone.workingHours && (
+              {activeZone?.workingHours && (
                 <div className="bg-marine/5 p-4 rounded-2xl col-span-2">
                   <span className="text-[10px] uppercase font-bold text-marine/40 block mb-1">Radno vrijeme</span>
                   <span className="font-bold text-marine">{activeZone.workingHours}</span>
@@ -152,7 +169,7 @@ export default function MarinaMap({ zones, dict, lang }: MarinaMapProps) {
                 rel={activeZone.external ? "noopener noreferrer" : undefined}
                 className="block w-full text-center bg-marine hover:bg-marine-light text-white px-8 py-4 rounded-2xl uppercase tracking-widest text-xs font-bold transition-all shadow-lg hover:shadow-xl active:scale-95"
               >
-                {activeZone.ctaKey ? activeZone.ctaKey.split('.').reduce((o, i) => o?.[i], dict) : 'VIŠE INFORMACIJA'}
+                {activeZone.ctaKey ? activeZone.ctaKey.split('.').reduce((o: any, i: string) => o?.[i], dict) : 'VIŠE INFORMACIJA'}
               </a>
             )}
           </motion.div>

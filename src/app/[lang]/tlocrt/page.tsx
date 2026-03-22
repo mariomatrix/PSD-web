@@ -3,7 +3,7 @@ import { getDictionary, hasLocale } from '../dictionaries'
 import type { Locale } from '../dictionaries'
 import { marinaZones } from '@/lib/marina-data'
 import AnimatedSection from '@/components/ui/AnimatedSection'
-import MarinaMap from '@/components/marina-map/MarinaMap'
+import InteractiveMap from '@/components/marina-map/InteractiveMap'
 
 export default async function MarinaPlanPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
@@ -15,7 +15,7 @@ export default async function MarinaPlanPage({ params }: { params: Promise<{ lan
     <div className="pt-32 pb-24 lg:pt-40 lg:pb-32 px-6 lg:px-8 max-w-7xl mx-auto">
       <AnimatedSection className="text-center mb-12 lg:mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-marine mb-6">
-          {dict.nav?.marinaPlan || 'Plan lučice'}
+          {dict.marinaPlan?.heading || dict.nav?.marinaPlan || 'Plan lučice'}
         </h1>
         <p className="text-xl text-text-muted font-light max-w-2xl mx-auto">
           {dict.marinaPlan?.description || 'Interaktivni plan vezova i infrastrukture.'}
@@ -24,7 +24,7 @@ export default async function MarinaPlanPage({ params }: { params: Promise<{ lan
       </AnimatedSection>
 
       <AnimatedSection delay={0.2}>
-        <MarinaMap zones={marinaZones} dict={dict} lang={lang} />
+        <InteractiveMap zones={marinaZones} dict={dict} lang={lang} />
       </AnimatedSection>
       
       <AnimatedSection delay={0.4} className="mt-12 text-center text-sm text-text-muted/60">
