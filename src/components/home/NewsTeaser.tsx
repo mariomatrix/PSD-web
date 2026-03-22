@@ -45,12 +45,12 @@ export default function NewsTeaser({ lang, dict }: NewsTeaserProps) {
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}
           variants={fadeInUp}
-          className="text-center mb-16"
+          className="text-center mb-20 lg:mb-24"
         >
-          <h2 className="text-4xl md:text-5xl font-serif text-marine mb-6">
+          <h2 className="text-4xl md:text-6xl font-black text-marine mb-6 leading-tight tracking-tighter">
             {dict.newsTeaser.heading}
           </h2>
-          <div className="w-16 h-1 bg-gold mx-auto mt-6" />
+          <div className="w-20 h-2 bg-gold mx-auto mt-6 rounded-full shadow-[0_0_15px_rgba(42,138,159,0.3)]" />
         </motion.div>
 
         <motion.div
@@ -58,25 +58,36 @@ export default function NewsTeaser({ lang, dict }: NewsTeaserProps) {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12"
         >
           {placeholderNews.map((item) => (
             <motion.article
               key={item.slug}
               variants={fadeInUp}
-              className="bg-white p-8 rounded-sm shadow-[0_2px_12px_-4px_rgba(0,0,0,0.04)] hover:shadow-md transition-shadow duration-300 group"
+              className="vibe-glass vibe-floating p-10 rounded-[2.5rem] bg-white border border-white/20 shadow-2xl transition-all duration-500 group relative overflow-hidden"
+              style={{ willChange: 'transform' }}
             >
-              <time className="text-xs text-text-muted uppercase tracking-widest">
+              <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <ArrowRight className="w-6 h-6 text-gold -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
+              </div>
+
+              <time className="text-[10px] text-marine/40 font-black uppercase tracking-[0.3em] block mb-6">
                 {new Date(item.date).toLocaleDateString(lang === 'hr' ? 'hr-HR' : 'en-GB', {
                   day: 'numeric',
                   month: 'long',
                   year: 'numeric',
                 })}
               </time>
-              <h3 className="text-lg font-serif text-marine mt-3 mb-4 leading-snug group-hover:text-gold transition-colors duration-300">
+              <h3 className="text-2xl font-black text-marine leading-tight group-hover:text-gold transition-colors duration-500 mb-8 min-h-[4rem]">
                 {lang === 'hr' ? item.titleHr : item.titleEn}
               </h3>
-              <div className="w-8 h-px bg-gold/40" />
+              
+              <Link 
+                href={localizedHref(`/vijesti/${item.slug}`, lang)}
+                className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gold hover:text-marine transition-colors duration-300"
+              >
+                PROČITAJ VIŠE <ArrowRight className="w-4 h-4" />
+              </Link>
             </motion.article>
           ))}
         </motion.div>
@@ -86,12 +97,12 @@ export default function NewsTeaser({ lang, dict }: NewsTeaserProps) {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="text-center mt-12"
+          className="text-center mt-20 lg:mt-24"
         >
-          <motion.div whileHover={buttonHover} className="inline-block">
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
             <Link
               href={localizedHref('/vijesti', lang)}
-              className="text-gold hover:text-marine text-sm font-semibold uppercase tracking-widest transition-colors duration-300 inline-flex items-center gap-2"
+              className="vibe-glass text-marine px-10 py-5 rounded-2xl uppercase tracking-[0.3em] text-[11px] font-black transition-all duration-500 hover:bg-gold hover:text-white inline-flex items-center gap-3 border border-marine/5 bg-white/50"
             >
               {dict.newsTeaser.cta}
               <ArrowRight className="w-4 h-4" />

@@ -68,7 +68,7 @@ export default function SatelliteMap({ zones, dict, lang }: SatelliteMapProps) {
   }
 
   return (
-    <div className="relative w-full h-[600px] lg:h-[800px] bg-marine/5 border border-marine/10 rounded-3xl overflow-hidden shadow-inner">
+    <div className="relative w-full h-[600px] lg:h-[800px] bg-marine/5 border border-marine/10 rounded-3xl overflow-hidden shadow-inner vibe-depth-container">
       <MapContainer 
         center={[43.5153347, 16.4178979]} 
         zoom={18} 
@@ -97,55 +97,57 @@ export default function SatelliteMap({ zones, dict, lang }: SatelliteMapProps) {
       <AnimatePresence>
         {activeZone && (
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -30 }}
-            className="absolute bottom-8 left-8 right-8 lg:left-12 lg:right-auto lg:w-96 bg-white/95 backdrop-blur-xl shadow-2xl border border-marine/10 p-8 rounded-3xl z-[1000] pointer-events-auto"
+            initial={{ opacity: 0, x: -60, rotateY: 20 }}
+            animate={{ opacity: 1, x: 0, rotateY: 0 }}
+            exit={{ opacity: 0, x: -40, rotateY: 20 }}
+            transition={{ duration: 0.6, ease: [0.2, 0, 0.2, 1] }}
+            className="absolute bottom-8 left-8 right-8 lg:left-12 lg:right-auto lg:bottom-12 lg:w-[420px] vibe-glass vibe-floating p-10 rounded-[2.5rem] z-[1000] pointer-events-auto border border-white/30"
+            style={{ willChange: 'transform, opacity' }}
           >
             <button 
               onClick={() => setActiveZoneId(null)}
-              className="absolute top-6 right-6 p-2 text-marine/40 hover:text-marine hover:bg-marine/5 rounded-full transition-all"
+              className="absolute top-8 right-8 p-3 text-marine/40 hover:text-marine hover:bg-marine/5 rounded-full transition-all active:scale-90"
             >
-              <X className="w-5 h-5" />
+              <X className="w-6 h-6" />
             </button>
 
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-2xl bg-marine/5 flex items-center justify-center text-gold">
-                {React.createElement(IconMap[activeZone.icon || 'anchor'] || Anchor, { className: "w-6 h-6" })}
+            <div className="flex items-center gap-6 mb-8">
+              <div className="w-14 h-14 rounded-2xl bg-marine/5 flex items-center justify-center text-gold shadow-inner border border-marine/10">
+                {React.createElement(IconMap[activeZone.icon || 'anchor'] || Anchor, { className: "w-7 h-7" })}
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-marine leading-tight">
+                <h3 className="text-3xl font-black text-marine leading-tight tracking-tighter">
                   {activeZone.nameKey.split('.').reduce((o: any, i: string) => o?.[i], dict) || activeZone.id}
                 </h3>
-                <span className="text-[10px] uppercase tracking-[0.2em] font-black text-marine/30">
+                <span className="text-[10px] uppercase tracking-[0.4em] font-black text-marine/20">
                   {activeZone.type}
                 </span>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 text-sm mb-8">
+            <div className="grid grid-cols-2 gap-4 text-sm mb-10">
               {activeZone.category && (
-                <div className="bg-marine/5 p-4 rounded-2xl">
-                  <span className="text-[10px] uppercase font-bold text-marine/40 block mb-1">Kat</span>
-                  <span className="font-bold text-marine">{activeZone.category}</span>
+                <div className="bg-marine/5 p-5 rounded-3xl border border-marine/5">
+                  <span className="text-[10px] uppercase font-black text-marine/30 block mb-1 tracking-widest">Kat</span>
+                  <span className="font-bold text-marine text-base">{activeZone.category}</span>
                 </div>
               )}
               {activeZone.berths && (
-                <div className="bg-marine/5 p-4 rounded-2xl">
-                  <span className="text-[10px] uppercase font-bold text-marine/40 block mb-1">Vezovi</span>
-                  <span className="font-bold text-marine">{activeZone.berths}</span>
+                <div className="bg-marine/5 p-5 rounded-3xl border border-marine/5">
+                  <span className="text-[10px] uppercase font-black text-marine/30 block mb-1 tracking-widest">Vezovi</span>
+                  <span className="font-bold text-marine text-base">{activeZone.berths}</span>
                 </div>
               )}
               {activeZone.maxDraft && (
-                <div className="bg-marine/5 p-4 rounded-2xl">
-                  <span className="text-[10px] uppercase font-bold text-marine/40 block mb-1">Max gaz</span>
-                  <span className="font-bold text-marine">{activeZone.maxDraft}</span>
+                <div className="bg-marine/5 p-5 rounded-3xl border border-marine/5">
+                  <span className="text-[10px] uppercase font-black text-marine/30 block mb-1 tracking-widest">Max gaz</span>
+                  <span className="font-bold text-marine text-base">{activeZone.maxDraft}</span>
                 </div>
               )}
               {activeZone.workingHours && (
-                <div className="bg-marine/5 p-4 rounded-2xl col-span-2">
-                  <span className="text-[10px] uppercase font-bold text-marine/40 block mb-1">Radno vrijeme</span>
-                  <span className="font-bold text-marine">{activeZone.workingHours}</span>
+                <div className="bg-marine/5 p-5 rounded-3xl col-span-2 border border-marine/5">
+                  <span className="text-[10px] uppercase font-black text-marine/30 block mb-1 tracking-widest">Radno vrijeme</span>
+                  <span className="font-bold text-marine text-base">{activeZone.workingHours}</span>
                 </div>
               )}
             </div>
@@ -155,7 +157,7 @@ export default function SatelliteMap({ zones, dict, lang }: SatelliteMapProps) {
                 href={activeZone.ctaLink}
                 target={activeZone.external ? "_blank" : undefined}
                 rel={activeZone.external ? "noopener noreferrer" : undefined}
-                className="block w-full text-center bg-marine hover:bg-marine-light text-white px-8 py-4 rounded-2xl uppercase tracking-widest text-xs font-bold transition-all shadow-lg hover:shadow-xl active:scale-95"
+                className="block w-full text-center bg-marine hover:bg-marine-light text-white px-10 py-5 rounded-2xl uppercase tracking-[0.3em] text-xs font-black transition-all shadow-xl hover:shadow-2xl active:scale-95"
               >
                 {activeZone.ctaKey ? activeZone.ctaKey.split('.').reduce((o: any, i: string) => o?.[i], dict) : 'VIŠE INFORMACIJA'}
               </a>

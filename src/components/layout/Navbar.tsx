@@ -54,7 +54,7 @@ export default function Navbar({ lang, dict }: NavbarProps) {
           className="fixed top-4 left-0 right-0 z-50 px-4 md:px-6 pointer-events-none"
         >
           <nav className="max-w-6xl mx-auto pointer-events-auto">
-            <div className="bg-marine/80 dark:bg-marine/60 backdrop-blur-xl border border-white/10 dark:border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.12)] rounded-[2rem] lg:rounded-full px-4 lg:px-8 py-2 lg:py-3 flex items-center justify-between">
+            <div className="vibe-glass vibe-floating rounded-[2rem] lg:rounded-full px-4 lg:px-8 py-2 lg:py-3 flex items-center justify-between">
               
               {/* Branding Section */}
               <div className="flex items-center gap-4 lg:gap-8">
@@ -80,7 +80,7 @@ export default function Navbar({ lang, dict }: NavbarProps) {
                       className="text-white/70 hover:text-white text-[13px] font-bold tracking-wide transition-all duration-300 relative group py-2"
                     >
                       {dict.nav[link.key]}
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full rounded-full" />
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full rounded-full shadow-[0_0_10px_rgba(42,138,159,0.5)]" />
                     </Link>
                   ))}
                 </div>
@@ -98,7 +98,7 @@ export default function Navbar({ lang, dict }: NavbarProps) {
                   href={externalLinks.craneApp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold hover:bg-gold-light text-white px-5 py-2.5 rounded-full uppercase tracking-wider text-[11px] font-bold transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap"
+                  className="bg-gold hover:bg-gold-light text-white px-6 py-3 rounded-full uppercase tracking-wider text-[11px] font-black transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:scale-95"
                 >
                   {dict.nav.bookCrane}
                 </a>
@@ -115,15 +115,16 @@ export default function Navbar({ lang, dict }: NavbarProps) {
             </div>
           </nav>
 
+
           {/* Mobile Overlay Menu */}
           <AnimatePresence>
             {isOpen && (
               <motion.div
-                initial={{ opacity: 0, scale: 0.95, y: -20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                className="absolute top-24 left-4 right-4 bg-marine/95 backdrop-blur-2xl rounded-3xl border border-white/10 shadow-2xl p-8 lg:hidden pointer-events-auto"
+                initial={{ opacity: 0, scale: 0.9, y: -40, rotateX: -10 }}
+                animate={{ opacity: 1, scale: 1, y: 0, rotateX: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: -40, rotateX: -10 }}
+                transition={{ duration: 0.5, ease: [0.2, 0, 0.2, 1] }}
+                className="absolute top-24 left-4 right-4 vibe-glass vibe-floating rounded-[2rem] p-10 lg:hidden pointer-events-auto border border-white/20 shadow-2xl"
               >
                 <div className="flex flex-col gap-6 items-center">
                   {navLinks.map((link) => (
